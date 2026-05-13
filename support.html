@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support - gushwork</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header is-visible">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="gushwork home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">gushwork</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link" href="index.html#features">Features</a>
+        <a class="nav-link" href="index.html#gallery">Gallery</a>
+        <a class="nav-link" href="index.html#pricing">Pricing</a>
+        <a class="nav-link" href="index.html#contact">Contact</a>
+      </nav>
+      <a class="cta" href="index.html#contact">Get Started</a>
+    </div>
+  </header>
+
+  <main>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Support</h2>
+        <p class="muted">We’re here to help.</p>
+
+        <div class="cards" style="grid-template-columns: repeat(3, 1fr); margin-top:16px">
+          <article class="card">
+            <h3>Contact</h3>
+            <p class="muted">Use the form on the home page to send a message.</p>
+            <a class="btn btn-block" style="margin-top:10px" href="index.html#contact">Contact form</a>
+          </article>
+
+          <article class="card">
+            <h3>FAQs</h3>
+            <p class="muted">Quick answers (demo).</p>
+            <a class="btn btn-block" style="margin-top:10px" href="#" onclick="return false;" data-action="faqs">View
+              FAQs</a>
+
+            <div id="faqPanel" class="faq-panel" hidden>
+              <div class="card" style="margin-top:14px">
+                <h3 style="margin-top:0">FAQs (demo)</h3>
+                <p class="muted"><strong>Q:</strong> How does the sticky header work?</p>
+                <p class="muted">A: It appears after scrolling past the first fold.</p>
+                <p class="muted"><strong>Q:</strong> How do I see the zoom?</p>
+                <p class="muted">A: Hover over an image in the gallery carousel.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Status</h3>
+            <p class="muted">Live-like status (demo).</p>
+            <a class="btn btn-block" style="margin-top:10px" href="#" onclick="return false;"
+              data-action="status">System status</a>
+
+            <div id="statusPanel" class="faq-panel" hidden>
+              <div class="card" style="margin-top:14px">
+                <h3 style="margin-top:0">System Status (demo)</h3>
+                <p class="muted"><strong>API:</strong> Operational</p>
+                <p class="muted"><strong>Web:</strong> Operational</p>
+                <p class="muted"><strong>Database:</strong> Operational</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span id="year-footer"></span> gushwork</span>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="support.html">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const y2 = document.getElementById('year-footer');
+    if (y2) y2.textContent = String(new Date().getFullYear());
+
+    // Toggle panels on click (in addition to toast)
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-action]');
+      if (!btn) return;
+      const action = btn.getAttribute('data-action');
+      if (action === 'faqs') {
+        e.preventDefault();
+        const panel = document.getElementById('faqPanel');
+        if (panel) panel.hidden = !panel.hidden;
+      }
+      if (action === 'status') {
+        e.preventDefault();
+        const panel = document.getElementById('statusPanel');
+        if (panel) panel.hidden = !panel.hidden;
+      }
+    });
+  </script>
+</body>
+
+</html>

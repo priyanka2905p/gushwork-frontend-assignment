@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gushwork</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Sticky header (appears after first fold) -->
+  <header class="site-header" id="siteHeader" aria-label="Site header">
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="Gushwork home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">gushwork</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="nav-link" href="#home">Home</a>
+        <a class="nav-link" href="#features">Features</a>
+        <a class="nav-link" href="#gallery">Gallery</a>
+        <a class="nav-link" href="#pricing">Pricing</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <a class="cta" href="#contact">Get Started</a>
+
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <a class="nav-link" href="#home">Home</a>
+      <a class="nav-link" href="#features">Features</a>
+      <a class="nav-link" href="#gallery">Gallery</a>
+      <a class="nav-link" href="#pricing">Pricing</a>
+      <a class="nav-link" href="#contact">Contact</a>
+      <a class="cta cta-mobile" href="#contact">Get Started</a>
+    </div>
+  </header>
+
+  <!-- Hero / first fold -->
+  <main>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Build. Launch. Grow.</p>
+          <h1>Everything you need to ship with confidence.</h1>
+          <p class="lead">
+            A responsive, accessible landing page with a sticky header and
+            an interactive image carousel with hover zoom.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#gallery">View Gallery</a>
+            <a class="btn btn-ghost" href="#features">Explore Features</a>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Highlights">
+          <div class="stat">
+            <div class="stat-value">99%</div>
+            <div class="stat-label">Performance</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">A11y</div>
+            <div class="stat-label">Accessible</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">Responsive</div>
+            <div class="stat-label">Desktop to Mobile</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <h2 class="section-title">Features</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Sticky header</h3>
+            <p>Header transitions in/out smoothly when scrolling beyond the first fold.</p>
+          </article>
+          <article class="card">
+            <h3>Hover zoom carousel</h3>
+            <p>Hover any carousel image to reveal a zoomed preview with smooth effects.</p>
+          </article>
+          <article class="card">
+            <h3>Modern layout</h3>
+            <p>Grid/Flex layouts, semantic HTML, and lightweight vanilla JS.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" id="gallery">
+      <div class="container">
+        <h2 class="section-title">Gallery</h2>
+
+        <div class="carousel" data-carousel>
+          <div class="carousel-stage" aria-live="polite">
+            <!-- Main image with zoom-on-hover -->
+            <div class="carousel-zoom-wrap">
+              <button class="carousel-arrow left" type="button" data-prev aria-label="Previous image">&#10094;</button>
+
+              <div class="carousel-image-grid" role="group" aria-label="Image carousel">
+                <!-- JS will inject slides -->
+              </div>
+
+              <button class="carousel-arrow right" type="button" data-next aria-label="Next image">&#10095;</button>
+
+              <div class="carousel-zoom-preview" aria-hidden="true">
+                <img class="carousel-zoom-img" alt="" />
+                <div class="zoom-hint">Zoom</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-controls" aria-label="Carousel controls">
+            <div class="dots" data-dots></div>
+            <div class="carousel-meta">
+              <span class="current" data-current>1</span>
+              <span class="sep">/</span>
+              <span class="total" data-total>4</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <h2 class="section-title">Pricing</h2>
+        <div class="cards cards-pricing">
+          <article class="card card-pricing">
+            <h3>Starter</h3>
+            <p class="price">$19<span>/mo</span></p>
+            <ul class="list">
+              <li>Basic features</li>
+              <li>Email support</li>
+              <li>Community access</li>
+            </ul>
+            <a class="btn btn-block" href="#contact">Choose Starter</a>
+          </article>
+          <article class="card card-pricing featured">
+            <div class="badge">Most Popular</div>
+            <h3>Pro</h3>
+            <p class="price">$49<span>/mo</span></p>
+            <ul class="list">
+              <li>Advanced features</li>
+              <li>Priority support</li>
+              <li>Team collaboration</li>
+            </ul>
+            <a class="btn btn-block" href="#contact">Choose Pro</a>
+          </article>
+          <article class="card card-pricing">
+            <h3>Business</h3>
+            <p class="price">$99<span>/mo</span></p>
+            <ul class="list">
+              <li>All Pro features</li>
+              <li>Dedicated onboarding</li>
+              <li>Security review</li>
+            </ul>
+            <a class="btn btn-block" href="#contact">Choose Business</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <h2 class="section-title">Contact</h2>
+          <p class="muted">Send a message and we’ll get back to you.</p>
+        </div>
+        <form class="form" action="#" method="post">
+
+          <label>
+            <span>Full name</span>
+            <input name="name" autocomplete="name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input name="email" autocomplete="email" type="email" required />
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button class="btn" type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span>© <span id="year"></span> gushwork</span>
+        <div class="footer-links">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="support.html">Support</a>
+        </div>
+
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
